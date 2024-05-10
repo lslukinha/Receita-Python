@@ -1,6 +1,5 @@
-arquivo = open("receitas.csv", "w" )
 class Receita:
-    def _init_(self, nome, pais_origem, ingredientes, preparo):
+    def __init__(self, nome, pais_origem, ingredientes, preparo):
         self.nome = nome
         self.pais_origem = pais_origem
         self.ingredientes = ingredientes
@@ -8,12 +7,13 @@ class Receita:
 
 receitas = []
 
-def visualizarReceita(receitas):
+def visualizarReceitas(receitas):
     for receita in receitas:
-        print(f"Nome {nome}")
-        print(f"Pais de origem {pais_origem}")
-        print(f"Ingredientes {ingredientes}")
-        print(f"Preparo {preparo}")
+        print(f"Nome: {receita.nome}")
+        print(f"Pais de origem: {receita.pais_origem}")
+        print(f"Ingredientes: {receita.ingredientes}")
+        print(f"Preparo: {receita.preparo}")
+        print()
 
 while True:
     print("\nMenu:")
@@ -33,4 +33,5 @@ while True:
         receitas.append(novaReceita)
     
     elif escolha == "4":
-        print(visualizarReceita)
+        visualizarReceitas(receitas)
+
