@@ -5,6 +5,19 @@ def add_receita(receitas_array):
     preparo = input("Digite o modo de preparo da receita separado por ';' : ")
     novaReceita = {"nome": nome,"pais_origem": pais_origem,"ingredientes": ingredientes.split(';'),"preparo": preparo.split(';')}
     receitas_array.append(novaReceita)
+    print("Nova receita adicionada com sucesso!")
+
+def remove_receita(receitas_array):
+    print("Receitas existentes:")
+    visualizarReceitas(receitas_array)
+    nome = input("Digite o nome da receita que deseja remover: ")
+    for receita in receitas_array:
+        if receita['nome'] == nome:
+            receitas_array.remove(receita)
+            print("Receita removida com sucesso!")
+            return
+    print("Não foi encontrada uma receita com esse nome.")
+
 
 def visualizarReceitas(receitas_array):
     for receita in receitas_array:
@@ -30,3 +43,6 @@ while True:
     
     elif escolha == "4":
         visualizarReceitas(receitas_array)
+
+    elif escolha == "5":
+        remove_receita(receitas_array)
