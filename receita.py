@@ -8,9 +8,8 @@ def add_receita(receitas_array):
     print("Nova receita adicionada com sucesso!")
 
 
+
 def remove_receita(receitas_array):
-    print("Receitas existentes:")
-    visualizarReceitas(receitas_array)
     nome = input("Digite o nome da receita que deseja remover: ")
     for receita in receitas_array:
         if receita['nome'] == nome:
@@ -41,8 +40,8 @@ while True:
 
     if escolha == "1":
         add_receita(receitas_array)
-    
-    
+
+
     elif escolha == "4":
         visualizarReceitas(receitas_array)
 
