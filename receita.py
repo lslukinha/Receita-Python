@@ -7,6 +7,8 @@ def add_receita(receitas_array):
     receitas_array.append(novaReceita)
     print("Nova receita adicionada com sucesso!")
 
+
+
 def remove_receita(receitas_array):
     print("Receitas existentes:")
     visualizarReceitas(receitas_array)
@@ -40,7 +42,8 @@ while True:
 
     if escolha == "1":
         add_receita(receitas_array)
-    
+
+
     elif escolha == "4":
         visualizarReceitas(receitas_array)
 
