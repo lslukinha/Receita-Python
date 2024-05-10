@@ -8,7 +8,7 @@ class Receita:
 
 receitas = []
 
-def visualizarReceita():
+def visualizarReceita(receitas):
     for receita in receitas:
         print(f"Nome {nome}")
         print(f"Pais de origem {pais_origem}")
