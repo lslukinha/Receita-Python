@@ -1,19 +1,20 @@
-class Receita:
-    def __init__(self, nome, pais_origem, ingredientes, preparo):
-        self.nome = nome
-        self.pais_origem = pais_origem
-        self.ingredientes = ingredientes
-        self.preparo = preparo
+def add_receita(receitas_array):
+    nome = input("Digite o nome da receita : ")
+    pais_origem = input("Digite o país de origem da receita : ")
+    ingredientes = input("Digite os ingredientes da receita separados por ';' : ")
+    preparo = input("Digite o modo de preparo da receita separado por ';' : ")
+    novaReceita = {"nome": nome,"pais_origem": pais_origem,"ingredientes": ingredientes.split(';'),"preparo": preparo.split(';')}
+    receitas_array.append(novaReceita)
 
-receitas = []
-
-def visualizarReceitas(receitas):
-    for receita in receitas:
-        print(f"Nome: {receita.nome}")
-        print(f"Pais de origem: {receita.pais_origem}")
-        print(f"Ingredientes: {receita.ingredientes}")
-        print(f"Preparo: {receita.preparo}")
+def visualizarReceitas(receitas_array):
+    for receita in receitas_array:
+        print(f"Nome: {receita['nome']}")
+        print(f"Pais de origem: {receita['pais_origem']}")
+        print("Ingredientes:", receita['ingredientes'])
+        print("Preparo:", receita['preparo'])
         print()
+
+receitas_array = []
 
 while True:
     print("\nMenu:")
@@ -25,13 +26,7 @@ while True:
     escolha = input("Escolha a opção desejada(1-5): ")
 
     if escolha == "1":
-        nome = input("Qual o nome da receita?: ")
-        pais_origem = input("Qual o país da receita?: ")
-        ingredientes = input("Quais os ingredientes?: ")
-        preparo = input("Qual modo de preparo?: ")
-        novaReceita = Receita(nome, pais_origem, ingredientes, preparo)
-        receitas.append(novaReceita)
+        add_receita(receitas_array)
     
     elif escolha == "4":
-        visualizarReceitas(receitas)
-
+        visualizarReceitas(receitas_array)
