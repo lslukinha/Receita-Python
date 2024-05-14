@@ -6,6 +6,7 @@ def add_receita(receitas_array):
     novaReceita = {"nome": nome,"pais_origem": pais_origem,"ingredientes": ingredientes.split(';'),"preparo": preparo.split(';')}
     receitas_array.append(novaReceita)
     print("Nova receita adicionada com sucesso!")
+    print('qwerty')
 
 def remove_receita(receitas_array):
     print("Receitas existentes:")
